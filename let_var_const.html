@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>var let和const 区别</title>
+</head>
+
+<script>
+//    {  // let的作用域不会被提升，只作用于当前代码块
+//        console.log(str);
+//        var str = "张三";
+//        console.log(str);
+//        let  str2 = "李四";
+//        console.log(str2);
+//    }
+//    console.log(str);
+//    console.log(str2);
+
+//    { // let 在相同作用域下 不能重复定义 并且下面的代码块没有输出，说明先解析
+//        var str="张三";
+//        var str="李四";
+//        console.log(str);
+//        let str2 ="张三";
+//        let str2="李四";
+//        console.log(str2);
+//    }
+
+
+
+
+</script>
+<body>
+    <!--快捷键: button{按钮$}*5-->
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <script>
+
+        {
+            let btns =document.querySelectorAll("button");
+//            for(var i=0;i<btns.length;i++){
+//                btns[i].onclick = function () {
+//                    alert("点击了第"+i+"个按钮");
+//                }
+//            }
+
+//            for(var i=0;i<btns.length;i++)
+//            {
+//                (function (i) { //闭包写法 将i传入
+//                    btns[i].onclick = function () {
+//                    alert("点击了第"+(i+1)+"个按钮");
+//                }
+//                })(i);
+//            }
+
+            // let 体现父子作用域
+//            for(let i=0;i<btns.length;i++){
+//                btns[i].onclick = function () {
+//                    alert("点击了第"+(i+1)+"个按钮");
+//                }
+//            }
+
+//             for(let i=0;i<5;i++)
+//            {
+//               // let i = 20;
+//                console.log(i);
+//            }
+
+            //声明的全局变量不再是window的属性
+//            "use strict";
+//            var a = 1;
+//            console.log(window.a) // 1
+//
+//            let b = 1;
+//            console.log(window.b) // undefined
+
+            // const 只作用于当前代码块
+            {
+                const str = "lisi";
+                console.log(str);
+            }
+            console.log(str);
+            // const 作用域不会被提升  也不能重复定义  申明常量必须赋值 且不能修改
+        }
+    </script>
+</body>
+</html>

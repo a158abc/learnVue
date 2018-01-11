@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class基本使用</title>
+</head>
+<body>
+
+<script>
+  /*  function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+
+    Person.prototype = {
+        constructors:Person,
+        print()
+        {
+            console.log(name + "---" + age);
+        }
+    };*/
+
+    class Person {
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        print(){
+            console.log(this.name + "---" + this.age);
+        }
+    }
+
+    let person = new Person("zhangsan",18);
+    console.log(person);
+    person.print();
+
+</script>
+</body>
+</html>

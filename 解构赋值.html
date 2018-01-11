@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构赋值</title>
+</head>
+<body>
+    <script>
+        {
+            // 基本用法
+          /*  let name="lisi",age= 29,sex = "man";*/
+        /*  let [name,age,sex]=['lisi','28','man'];
+            console.log(name);
+            console.log(age);
+            console.log(sex);*/
+
+//            对象的结构赋值
+ //           let {name,age,sex}={name:'lisi',age:'28',sex:'man'};
+            let {name,age,friends,pets}={name:'lisi',age:'28',friends:['lili','lulu'],pets:{name:"d",age:"5"}};
+            console.log(name);
+            console.log(age);
+            console.log(friends);
+            console.log(pets);
+
+            let [a,b,c,d,e]="我是中国人";
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(d);
+            console.log(e);
+
+        }
+
+
+    </script>
+
+</body>
+</html>

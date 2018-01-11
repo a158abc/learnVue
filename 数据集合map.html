@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据集合map</title>
+</head>
+<body>
+    <script>
+        let obj1 = {"name":"lisi"}, obj2={"age":"11"},obj={};
+//        obj.name = "zhangsan";
+//        obj[obj1] = "今天天气nice";
+//        obj[obj2]  = "shi he qiao dai ma";
+//        obj["sex"] = "test";
+//        console.log(obj);
+//
+//        console.log(obj1.toString());
+//        console.log(obj2.toString());
+//        console.log(obj1.toString() === obj2.toString());
+
+        //创建map  同样存放的值是不同的
+        let map = new Map([
+            ["name","zhangsan"],
+            ["age",22],
+            [obj1,"今天"],
+            [obj2,"明天"],
+            [[1,2],'hahaha'],
+        ]);
+   /*     console.log(map);
+        console.log(map.size);
+        //set get
+        map.set("friends",["aa","bb"]);
+        console.log(map.size);
+        console.log(map);
+        console.log(map.get("name"));
+        console.log(map.get(obj1));*/
+
+
+        //去重
+        // map.set("name","李四");
+        // console.log(map);
+
+        //has
+      /*  console.log(map.has(obj2));
+        console.log(map.has("name"));*/
+
+      //delete
+//        map.delete("name");
+//        console.log(map);
+
+        //clear
+//        map.clear();
+//        console.log(map);
+
+        //keys values entries
+        console.log(map.keys());
+        console.log(map.values());
+        console.log(map.entries());
+
+        //遍历
+        map.forEach(function (value,key) {
+            console.log(key + "  " + value);
+        })
+
+        //注意
+        map.set({},"呵呵呵呵呵");
+        map.set({},"哈哈哈哈哈");
+        console.log(map);
+        console.log( {}==={});
+
+    </script>
+
+</body>
+</html>
