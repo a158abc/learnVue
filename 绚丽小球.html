@@ -73,13 +73,14 @@
             //console.log(ballArr.length);
         });
 
-        setInterval(function () {
-            cxt.clearRect(0,0,canvas.width,canvas.height);
+        setInterval(function () { //定时器
+            cxt.clearRect(0,0,canvas.width,canvas.height); //clearRect() 方法清空给定矩形内的指定像素。
             for(let i=0;i<ballArr.length;i++){
                 ballArr[i].renderer();
                 ballArr[i].upData();
             }
         },50);
+
 
 
     </script>

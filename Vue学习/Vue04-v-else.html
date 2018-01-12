@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-else使用</title>
+</head>
+<body>
+    <div id="app">
+        <p v-if="height>1.7">我的身高：{{height}}m</p>
+        <!--<p>xxxxx</p>  v-else 必须跟在v-if/v-if-else后面 如何这之间有其他，会报错-->
+        <!-- v-else不能单独使用，必须紧跟 v-if/v-if-else使用   -->
+        <p v-else>我的身高不足1.7m</p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                height:1.78,
+            }
+        });
+    </script>
+</body>
+</html>

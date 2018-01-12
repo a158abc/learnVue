@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数扩展</title>
+</head>
+<body>
+<script type="text/javascript">
+    //形参设置默认值  es5 写法
+  /*  function sum1(num1,num2) {
+        num1 = num1||10;
+        num2 = num2||20;
+        console.log(num1+num2);
+    }
+
+    function sum2(num3=30,num4=40) {
+        console.log(num3+num4);
+    }
+
+    sum1(20,40); //60
+    sum1();  //30
+
+    sum2(100,200); //300
+    sum2(); //70*/
+
+    //参数形式 延展操作符
+        //es5
+  /*  function sum3() {
+        let result = 0;
+        for(let value of arguments){
+            result += value;
+        }
+        return result;
+    }
+
+
+    // es6
+    function sum4(name,...nums) {
+        let result = 0;
+        console.log(name);
+        for(let value of nums){
+            result += value;
+        }
+        return result;
+    }
+    //console.log(sum3(1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12));
+   // console.log(sum4(1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12));
+    console.log(sum4("zhansan", 2, 3));*/
+
+     // 箭头函数  ()=>{}
+    /* let sum5 = (num5,num6)=>{
+         return num5+num6;
+     };
+     console.log(sum5(36, 100));
+
+     let str_arr =["zhangsan","lisi","wangwu"];
+     str_arr.forEach((value,index)=>{
+         console.log(index+ " : "+value);
+     });*/
+
+     function demo(){
+         setTimeout(function () {
+             console.log(this); // 此处的function函数this是window
+         },1000);
+
+         setTimeout(()=>{
+             console.log(this);  // 此处的箭头函数this是obj
+         },1000)
+     }
+     let obj ={};
+     demo.call(obj); //回调函数
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象拓展</title>
+    <style>
+        .sty{
+            background-color: red;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+ <!--快捷键 ui>li{111$}*6-->
+<ui>
+    <li>1111</li>
+    <li>1112</li>
+    <li>1113</li>
+    <li>1114</li>
+    <li>1115</li>
+    <li>1116</li>
+</ui>
+    <script type="text/javascript">
+//        模板字符串
+        //let  str = "<html><head></head><body><p>今天周五</p><div>明天放假</div></body></html>";
+   /*     let  va1="今天周五"; va2="sty";
+        let  str = `<html>
+                        <head></head>
+                        <body>
+                            <p>${va1}</p>
+                            <div class="${va2}">明天放假</div>
+                        </body>
+                        </html>`;
+        console.log(str);*/
+
+//        数组的扩展
+        //Array.from 从一个类似数组或可迭代对象中创建一个新的数组实例
+    /*    let liArr = document.querySelectorAll("li");
+        console.log(liArr);
+        console.log(Array.isArray(liArr)); // false
+
+        console.log(Array.from(liArr));  //转变成数组
+        console.log(Array.isArray(Array.from(liArr))); // true*/
+
+        //Array.of 创建一个具有可变数量参数的新数组实例
+       /* let arr = Array.of(1,2,3);
+        console.log(arr);
+        let arr1 = Array.of(1,'lisi',{})
+        console.log(arr1);*/
+
+        //key和value相同，写一个就可以
+     /*   let name="zhangsan",age=18;
+        let person = {
+            name,
+            age
+        };
+        console.log(person);*/
+
+        //Object.assign()  用于将所有可枚举属性的值从一个或多个源对象复制到目标对象
+     /*   let obj1 = {name:"zhangsan"};
+        let obj2= {age:18};
+        let obj3 = {sex:"man"};
+        let obj4 = {friends:"lisi"};
+        let obj5 = {pets:"aa"};
+        let obj = {};
+        Object.assign(obj,obj1,obj2,obj3,obj4,obj5);
+        console.log(obj);*/
+
+     //延展操作符
+/*        let str_bak = "今天周五";
+        console.log([...str_bak]); //转换成数组
+
+        let person = {
+            name:"zhangsan",
+            age:18
+        };*/
+       // <Person  {...person}/>  组件与组件内的元素传递数据可以这种用法
+
+        //数组去重复  转换成集合后再转成数组
+        let arr = ["1","2","30","zhangsan","30","1"];
+        console.log(new Set(arr));
+        let arr_new = [...new Set(arr)];
+        console.log(arr_new);
+
+    </script>
+</body>
+</html>

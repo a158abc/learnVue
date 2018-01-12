@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for使用</title>
+</head>
+<body>
+    <div id="app">
+        <p>成绩如下：</p>
+        <p v-for= "(scroe,index) in scores">{{index+" : "+scroe}}</p>
+        <p v-for= "(value,key) in dog">{{key+":"+value}}</p>
+        <p v-for= "d in dog">{{d}}</p>
+        <p v-for= "str in name">{{str}}</p>
+        <p v-for= "num in phone">{{num}}</p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                scores:[90,80,100,99,100],
+                dog:{name:"wangcai",age:14,love:"lili"},
+                name:"zhangsan",
+                phone:'129381879'
+            }
+        });
+    </script>
+</body>
+</html>

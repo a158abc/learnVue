@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue02学习</title>
+</head>
+<body>
+    <div id="app">
+        <p v-once>原始信息：{{message}}</p>
+        <p>修改后信息：{{message}}</p>
+        <input  type="text" v-model="message"/>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+         new Vue({
+             el:'#app',
+             data:{
+                 message:"我爱戴小白！"
+             }
+         });
+    </script>
+</body>
+</html>
