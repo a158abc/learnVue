@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-text和v-html用法</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}适合出行</p>
+        <p v-text="msg">适合出行!!!</p>
+        <div v-html="html">
+            坚持练习vue <!-- 此处添加其他信息 不展示-->
+        </div>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                msg:"今天天气nice！",
+                html:'<input type="date"> <input type="color">'
+            }
+        });
+    </script>
+</body>
+</html>

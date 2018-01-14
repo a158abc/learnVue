@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on练习</title>
+</head>
+<body>
+    <div id="app">
+        <P :Style="{color:fontColor}">{{msg}}</p>
+        <button v-on:click="changeContent()">改变内容</button>
+        <button @click="changeColor()">改变字体颜色</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                msg:"天气天气很好",
+                fontColor:"red"
+            },
+            methods:{ // 实例的所有函数实现
+                changeContent(){
+                    this.msg = "天气很热啊！！！！！";
+                },
+                changeColor(){
+                    this.fontColor = "#ffff00";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

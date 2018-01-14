@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue全局组件</title>
+</head>
+<body>
+    <div id="app01">
+        <my-date></my-date>
+        <my-date></my-date>
+    </div>
+    <hr >
+    <div id="app02">
+        <my-date></my-date>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        let ProFile = Vue.extend({
+            // 1.1模板选项
+            template:`<div>
+                          <input type="date">
+                          <p>1月份了，好好工作</p>
+                      </div>`
+        });
+         //1.2注册一个全局组件
+        Vue.component('my-date',ProFile);
+
+        new Vue({
+            el:'#app01'
+        });
+
+        new Vue({
+            el:'#app02'
+        });
+    </script>
+</body>
+</html>

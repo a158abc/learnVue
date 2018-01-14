@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <p> 初始值：{{name}}</p>
+        <p> 翻转值：{{name.split('').reverse().join('')}}</p>
+        <p> 翻转函数：{{reverseStrFunc()}}</p>
+        <p>计算属性：{{reverse}}</p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                name:"Rose Jack"
+            },
+            methods:{
+                reverseStrFunc(){ //每次都是更新调用
+                    return this.name.split('').reverse().join('');
+                }
+            },
+            // 计算选项
+            computed:{
+                //get方法
+                reverse(){ //初始一次调用，以后都是缓存直接使用，不需要消耗 适用于： 计算量大  改变频率低
+                    return this.name.split('').reverse().join('');
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

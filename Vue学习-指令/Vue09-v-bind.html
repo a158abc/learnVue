@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue09-v-bind练习</title>
+</head>
+<body>
+    <div id="app">
+       <img v-bind:src="img1" :alt="alt1" />
+        <img :src="img2" :alt="alt2" />
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                img1:"assets/img01.png",
+                img2:'assets/img02.png',
+                alt1:"动物",
+                alt2:"美女"
+            }
+        });
+    </script>
+
+</body>
+</html>

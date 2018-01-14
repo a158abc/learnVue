@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue综合练习</title>
+    <style>
+        fieldset{
+            width: 500px;
+            height: 300px;
+            border: 1px solid orangered;
+            margin: 10px auto;
+        }
+
+        fieldset input{
+            width: 200px;
+            height: 30px;
+            margin: 10px 0px;
+        }
+
+        fieldset select{
+            height: 30px;
+            margin: 10px 0px;
+        }
+
+        table{
+            width: 528px;
+            height: 300px;
+            border: 1px solid orangered;
+            margin: 10px auto;
+        }
+        table thead{
+            background-color: orangered;
+        }
+        table td{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <fieldset>
+            <legend>学生信息录入系统</legend>
+            <div>
+                <span>姓名：</span>
+                <input type="text" v-model="newStudent.name">
+            </div>
+            <div>
+                <span>年龄：</span>
+                <input type="text"  v-model="newStudent.age">
+            </div>
+            <div>
+                <span>性别：</span>
+                <select v-model="newStudent.sex">
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+            </div>
+            <div>
+                <span>手机：</span>
+                <input type="text"  v-model="newStudent.phone">
+            </div>
+            <div>
+                <button @click="addStudentFunc()">添加学生</button>
+            </div>
+        </fieldset>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>姓名</td>
+                    <td>年龄</td>
+                    <td>性别</td>
+                    <td>手机</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(student,index) in students">
+                    <td>{{student.name}}</td>
+                    <td>{{student.age}}</td>
+                    <td>{{student.sex}}</td>
+                    <td>{{student.phone}}</td>
+                    <td><button @click="deleteStudentFunc(index)">删除</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                students:[
+                        {name:"张三",age:"18",sex:"男",phone:"13365894879" },
+                        {name:"李四",age:"19",sex:"女",phone:"13365892698" },
+                        {name:"王五",age:"20",sex:"男",phone:"13865652536" },
+                        {name:"赵六",age:"21",sex:"女",phone:"13912878925" },
+                        {name:"孙七",age:"22",sex:"女",phone:"18925683636" }
+                    ],
+                newStudent:{name:"",age:0,sex:"男",phone:""}
+
+            },
+            methods:{ // 实例的所有函数实现
+                addStudentFunc(){
+                    if(this.newStudent.name===""){
+                        alert("姓名不能为空");
+                        return;
+                    }
+                    if(this.newStudent.age<=0){
+                        alert("年龄不能为空");
+                        return;
+                    }
+                    if(this.newStudent.phone===""){
+                        alert("手机号码不能为空");
+                        return;
+                    }
+                    this.students.unshift(this.newStudent);
+                    this.newStudent = {name:"",age:0,sex:"男",phone:""};
+                },
+                deleteStudentFunc(index){
+                    this.students.splice(index,1);//删除  （添加/删除的索引位置  删除的个数(0不删除)  添加的元素）
+                }
+            }
+        });
+    </script>
+</body>
+</html>
