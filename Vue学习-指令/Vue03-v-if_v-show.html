@@ -7,7 +7,7 @@
 <body>
     <div id="app">
         <!--v-if和v-show类似，但v-if是代码块注释掉，v-show是用css控制，
-        如果频繁控制显示影藏用v-show，v-if会创建销毁
+        如果频繁控制显示影藏用v-show，v-if会创建销毁消耗大
         v-show 有更高的渲染，页面会全部渲染出来，初始化渲染消耗大
         v-if 如果不频繁修改显示影藏，就使用v-if， v-if更高的切换消耗-->
         <p v-if="show">{{message}}</p>

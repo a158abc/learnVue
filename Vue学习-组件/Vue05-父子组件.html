@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue父子组件</title>
+</head>
+<body>
+    <div id="app">
+        <my-parent></my-parent>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        let child1 = Vue.extend({
+            template:`<img src="../assets/img01-dongwu.png" width="200px">`
+        });
+
+        let child2 = Vue.extend({
+            template:`<h2>这是一个动物的背影</h2>`
+        });
+
+//        全局组件，注册父组件
+        Vue.component("my-parent",{
+            components:{
+                "my-child1":child1,
+                "my-child2":child2
+            },
+            template:`<div>
+                         <my-child1></my-child1>
+                         <my-child2></my-child2>
+                     </div>`
+        });
+
+
+        new Vue({
+            el:"#app"
+        });
+    </script>
+</body>
+</html>

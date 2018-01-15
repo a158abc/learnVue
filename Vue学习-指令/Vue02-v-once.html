@@ -6,8 +6,10 @@
 </head>
 <body>
     <div id="app">
+        <!--v-once的信息不回更改-->
         <p v-once>原始信息：{{message}}</p>
         <p>修改后信息：{{message}}</p>
+        <!--v-model 表单上数据双向绑定-->
         <input  type="text" v-model="message"/>
     </div>
     <script src="../js/vue.js"></script>

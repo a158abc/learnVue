@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template和script标签</title>
+</head>
+<body>
+        <div id="app">
+            <mb></mb>
+        </div>
+
+        <template id="temp">
+            <div>
+                <h1>我叫MT</h1>  <!--多个标签使用 需要套一层 只能有个根  -->
+                <input type="date">
+            </div>
+        </template>
+
+        <script type="text/template" id="sctmp">
+            <div>
+                <h2> 下图是个美女</h2>   <!-- 另外一种写法 (了解就好) -->
+                <img  src="../assets/img02-meinv.png"/>
+            </div>
+        </script>
+
+        <script src="../js/vue.js"></script>
+        <script type="text/javascript">
+
+            //注册
+            Vue.component("mb",{
+                template:"#sctmp"
+            });
+
+            new Vue({
+                el:"#app"
+
+            });
+         </script>
+</body>
+</html>

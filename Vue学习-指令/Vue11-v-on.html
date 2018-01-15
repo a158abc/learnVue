@@ -7,6 +7,7 @@
 <body>
     <div id="app">
         <P :Style="{color:fontColor}">{{msg}}</p>
+        <!--v-on绑定事件监听器 可以如下两种写法-->
         <button v-on:click="changeContent()">改变内容</button>
         <button @click="changeColor()">改变字体颜色</button>
     </div>

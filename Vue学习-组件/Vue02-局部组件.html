@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue02-局部组件</title>
+</head>
+<body>
+    <div id="app">
+        <my-data></my-data>
+        <my-color></my-color>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        //创建组件构造器
+        let Profile01=Vue.extend({
+            // 模板
+            template:`<div>
+                        <input type="date">
+                        <p>今天天气不错</p>
+                     </div>`
+        });
+
+        let Profile02=Vue.extend({
+            // 模板
+            template:`<div>
+                        <input type="color">
+                        <p>今天晴</p>
+                     </div>`
+        });
+
+        new Vue({
+            el:"#app",
+            components:{  //局部组件使用方法 只挂载在id=app的div上
+                'my-data':Profile01,
+                "my-color":Profile02
+            }
+        });
+    </script>
+</body>
+</html>

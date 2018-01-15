@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>局部组件补充</title>
+</head>
+<body>
+<div id="app">
+    <my-data></my-data>
+    <my-color></my-color>
+</div>
+<script src="../js/vue.js"></script>
+<script type="text/javascript">
+
+    new Vue({
+        el:"#app",
+        components:{  //局部组件使用方法 只挂载在id=app的div上
+            'my-data':{
+                template:`<div>
+                            <input type="date">
+                             <p>今天天气不错</p>
+                         </div>`
+            }
+        }
+    });
+</script>
+</body>
+</html>
