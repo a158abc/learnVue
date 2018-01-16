@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <mb imgsrc="../assets/img02-meinv.png" msg="这是一个美女照片"></mb>
+        <mb imgsrc="../assets/img01-dongwu.png" msg="这是一个动物照片"></mb>
+    </div>
+
+    <template id="temp">
+        <div>
+            <img :src="imgsrc" alt="" width="200px"/>
+            <p>{{msg}}</p>
+        </div>
+    </template>
+
+    
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+
+        //  let  data = { counter: 0 };
+
+        //注册 全局组件
+        Vue.component("mb",{
+            template:"#temp",
+            props:["imgsrc","msg"]  //通过props进行父向子通信    ps：全部用小写
+        });
+
+        new Vue({
+            el:"#app"
+
+        });
+    </script>
+</body>
+</html>

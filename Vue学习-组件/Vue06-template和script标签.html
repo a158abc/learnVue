@@ -19,16 +19,22 @@
         <script type="text/template" id="sctmp">
             <div>
                 <h2> 下图是个美女</h2>   <!-- 另外一种写法 (了解就好) -->
-                <img  src="../assets/img02-meinv.png"/>
+                <img  src="../assets/img02-meinv.png" width="200px"/>
+                <p>{{message}}</p>
             </div>
         </script>
 
         <script src="../js/vue.js"></script>
         <script type="text/javascript">
 
-            //注册
+            //注册 全局组件
             Vue.component("mb",{
-                template:"#sctmp"
+                template:"#sctmp",
+                data(){
+                    return {
+                        message:"上图是一个美女"
+                    }
+                }
             });
 
             new Vue({

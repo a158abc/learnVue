@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证data必须是函数</title>
+</head>
+<body>
+    <div id="app">
+        <mb></mb>
+        <mb></mb>
+        <mb></mb>
+        <mb></mb>
+        <mb></mb>
+    </div>
+
+    <template id="temp">
+        <div style="margin: 10px">
+           <button @click="counter+=1">点击按钮次数:{{counter}}</button>
+        </div>
+    </template>
+
+
+
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+
+      //  let  data = { counter: 0 };
+
+        //注册 全局组件
+        Vue.component("mb",{
+            template:"#temp",
+            data(){
+               // return data;
+                return{ //因为是函数 所以每次构建相当于new，counter值不互相影响  如果此处data是对象 则data值会互相影响
+                    counter:0
+                }
+            }
+        });
+
+        new Vue({
+            el:"#app"
+
+        });
+    </script>
+</body>
+</html>
