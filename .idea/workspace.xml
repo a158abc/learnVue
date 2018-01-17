@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="478f2dce-88a9-4819-8fe7-ce10b458ea36" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img03-nianhui.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/learnVue.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vue-进阶/Vue01-vue-router基本使用.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vue-进阶/Vue02-vue-router多级路由配置.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vue学习-组件/Vue09-组件间通信.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vue学习-组件/Vue10-自定义事件.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vue学习-组件/Vue11-匿名插槽slot.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vue学习-组件/Vue12-实名插槽slot.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vue-router.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vue-router.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vue学习-组件/Vue08-组件通信.html" afterPath="$PROJECT_DIR$/Vue学习-组件/Vue08-组件通信.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vue-进阶/Vue02-vue-router多级路由配置.html" afterPath="$PROJECT_DIR$/Vue-进阶/Vue02-vue-router多级路由配置.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -134,8 +104,8 @@
       <file leaf-file-name="Vue02-vue-router多级路由配置.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Vue-进阶/Vue02-vue-router多级路由配置.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="91" column="37" lean-forward="false" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
+            <state relative-caret-position="382">
+              <caret line="93" column="51" lean-forward="false" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
               <folding>
                 <element signature="n#template#4;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -147,7 +117,7 @@
         <entry file="file://$PROJECT_DIR$/Vue-进阶/Vue01-vue-router基本使用.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
-              <caret line="34" column="18" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="34" selection-end-column="18" />
+              <caret line="34" column="18" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="34" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -205,7 +175,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="586" />
     <option name="y" value="135" />
     <option name="width" value="1346" />
@@ -350,15 +320,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1515982301383</updated>
-      <workItem from="1515982304525" duration="39351000" />
+      <workItem from="1515982304525" duration="39455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39351000" />
+    <option name="totallyTimeSpent" value="39455000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -636,15 +606,15 @@
     <entry file="file://$PROJECT_DIR$/Vue-进阶/Vue01-vue-router基本使用.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
-          <caret line="34" column="18" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="34" selection-end-column="18" />
+          <caret line="34" column="18" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="34" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vue-进阶/Vue02-vue-router多级路由配置.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="91" column="37" lean-forward="false" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
+        <state relative-caret-position="382">
+          <caret line="93" column="51" lean-forward="false" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
           <folding>
             <element signature="n#template#4;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>

@@ -89,8 +89,9 @@
                     path:"/ani",
                     component:animal,
                     children:[
-                        {path:"/basic",component:pettygirl}
-                        {path:"/girl",component:pettygirl},
+                        {path:"/basic1",component:basic1},
+                        {path:"/basic2",component:basic2},
+                        {path:"/",redirect:"/basic1"}
                     ]
                 },
                 {path:"/girl",component:pettygirl},
