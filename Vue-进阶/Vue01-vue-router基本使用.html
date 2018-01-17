@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-router使用</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css" />
+</head>
+<style>
+    body{
+        background-color: #e5e5e5;
+    }
+</style>
+<body>
+        <div id="app">
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                   <div class="page-header">
+                       <h1>我的Vue</h1>
+                   </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 col-xs-offset-2">
+                    <div class="list-group">
+                        <!--使用router-link组件导航 传入to属性链接 ,<router-link>默认被渲染成<a>标签 -->
+                        <router-link to="/ani"  class="list-group-item">动物</router-link>
+                        <router-link to="/girl" class="list-group-item">美女</router-link>
+                        <router-link to="/year" class="list-group-item">年会</router-link>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <!--路由器出口欧 路由器匹配到组件渲染到这里-->
+                    <router-view></router-view>
+                </div>
+            </div>
+        </div>
+        <script src="../js/vue.js"></script>
+        <script src="../js/vue-router.js"></script>
+
+        <template id="dongwu">
+            <div>
+                <h2>这是一个动物的背影图</h2>
+                <img src="../assets/img01-dongwu.png" width="400px"/>
+            </div>
+        </template>
+
+        <template id="meinv">
+            <div>
+                <h2>这是一张美女图</h2>
+                <img src="../assets/img02-meinv.png" width="400px"/>
+            </div>
+        </template>
+
+        <template id="nianhui">
+            <div>
+                <h2>这是一张年会图</h2>
+                <img src="../assets/img03-nianhui.png" width="400px"/>
+            </div>
+        </template>
+
+
+        <script type="text/javascript">
+                 //1  创建组件
+                const animal=Vue.extend({
+                    template:"#dongwu"
+                });
+
+                const beautifulgirl=Vue.extend({
+                    template:"#meinv"
+                });
+
+                const yearmetting=Vue.extend({
+                    template:"#nianhui"
+                });
+//               2 定义路由
+                const routes = [
+                    {path:"/ani",component:animal},
+                    {path:"/girl",component:beautifulgirl},
+                    {path:"/year",component:yearmetting},
+                    {path:"/",redirect:"/ani"}
+                ];
+
+//              3  创建路由实例
+                const router = new VueRouter({
+                    routes //routes:routes
+                });
+
+//              4  创建vue实例并且挂载
+                new Vue({
+                    router
+                }).$mount("#app")
+        </script>
+
+</body>
+</html>

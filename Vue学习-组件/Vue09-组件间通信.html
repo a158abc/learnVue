@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多层组件之间通信</title>
+</head>
+    <body>
+        <!-- 多层数据通信： 动态绑定 -->
+        <div id="app">
+            <my-parent :imagesrc="tuyuan" :titlename="tuming"></my-parent>
+        </div>
+        <script src="../js/vue.js"></script>
+
+        <template id="my_img">
+            <img :src="imgsrc"  alt="" width="200px"/>
+        </template>
+
+        <template id="my_title">
+            <h2>{{titname}}</h2>
+        </template>
+
+        <template id="myparent">
+            <div>
+                <childone :imgsrc="imagesrc"></childone>
+                <childtwo :titname="titlename"></childtwo>
+            </div>
+        </template>
+
+        <script type="text/javascript">
+            //子组件实例化
+            let child1 =Vue.extend({
+                template:"#my_img",
+                props:["imgsrc"]
+            });
+
+            let child2 =Vue.extend({
+                template:"#my_title",
+                props:["titname"]
+            });
+
+            //注册
+            Vue.component("my-parent",{
+                props:["imagesrc","titlename"],
+                components:{
+                    "childone":child1,
+                    "childtwo":child2
+                },
+                template:"#myparent"
+            });
+
+            new Vue({
+                el:"#app",
+                data:{
+                    tuyuan:"../assets/img01-dongwu.png",
+                    tuming:"这是个动物的背影照"
+                }
+            });
+        </script>
+    </body>
+</html>

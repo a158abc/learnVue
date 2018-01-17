@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义事件</title>
+</head>
+<body>
+        <!--自定义事件，用于子类向父类传递数据-->
+        <div id="app">
+            <mybtn @gettotal="allcounter()"></mybtn>  <!-- 监听gettotal方法 触发 allcounter方法，调用allcounter-->
+            <mybtn @gettotal="allcounter()"></mybtn>
+            <mybtn @gettotal="allcounter()"></mybtn>
+            <mybtn @gettotal="allcounter()"></mybtn>
+            <mybtn @gettotal="allcounter()"></mybtn>
+            <mybtn @gettotal="allcounter()"></mybtn>
+            <p>一共点击了{{totalCounter}}次</p>
+        </div>
+        <script src="../js/vue.js"></script>
+        <template id="btn">
+            <button @click="gettotal()">点击了按钮{{counter}}次</button>
+        </template>
+        <script type="text/javascript">
+
+            Vue.component("mybtn",{
+                template:"#btn",
+                data(){
+                    return {
+                        counter:0
+                    }
+                },
+                methods:{
+                    gettotal(){
+                         this.counter += 1;
+//                        通知外界，调用了此方法
+                         this.$emit('gettotal');
+                    }
+                }
+            });
+
+            new Vue({
+                el:"#app",
+                data:{
+                    totalCounter:0
+                },
+                methods:{
+                    allcounter(){
+                        this.totalCounter +=1;
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

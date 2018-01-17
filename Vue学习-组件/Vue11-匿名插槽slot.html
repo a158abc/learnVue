@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <div id="app">
+            <myslot>
+                <img src="../assets/img01-dongwu.png" width="200px"/>
+                <p>动物背影</p>
+                <input type="color" />
+            </myslot>
+        </div>
+        <script src="../js/vue.js"></script>
+        <template id="my-slot">
+            <div>
+                <h2 class="panel-header">插槽标题</h2>
+                <slot>可以替换任何标签，默认显示提示内容</slot>
+                <footer>插槽底部</footer>
+            </div>
+        </template>
+        <script type="text/javascript">
+            Vue.component("myslot",{
+                template:"#my-slot"
+            });
+            new Vue({
+                el:"#app"
+
+            });
+        </script>
+</body>
+</html>
