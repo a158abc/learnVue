@@ -18,8 +18,11 @@
                 <div class="col-xs-2 col-xs-offset-2">
                     <div class="list-group">
                         <!--使用router-link组件导航 传入to属性链接 ,<router-link>默认被渲染成<a>标签 -->
-                        <router-link to="/ani"  class="list-group-item">动物</router-link>
-                        <router-link to="/girl" class="list-group-item">美女</router-link>
+                        <!-- 两种跳转方式 一种用name，需要数据绑定，可以于url过长的 -->
+                        <router-link :to="{name:'ani'}" class="list-group-item">动物</router-link>
+                        <router-link :to="{name:'girl'}" class="list-group-item">美女</router-link>
+                        <!--<router-link to="/ani" class="list-group-item">动物</router-link>-->
+                        <!--<router-link to="/girl" class="list-group-item">美女</router-link>-->
                         <router-link to="/year" class="list-group-item">年会</router-link>
                     </div>
                 </div>
@@ -36,19 +39,28 @@
             <div>
                 <h2>这是一个动物的背影图</h2>
                 <img src="../assets/img01-dongwu.png" width="400px"/>
+                <div>
+                    <ul class="nav nav-tabs">
+                        <router-link to="/ani/basic1" >年会图小</router-link>
+                        <router-link to="/ani/basic2" >年会图小大</router-link>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <router-view></router-view>
+                </div>
             </div>
         </template>
         <!-- 用做子组件-->
-        <template id="baisc1">
+        <template id="basic1">
             <div>
-                <h2>这是一个动物的背影图</h2>
+                <h2>这是一个新年图</h2>
                 <img src="../assets/img03-nianhui.png" width="100px"/>
             </div>
         </template>
 
         <template id="basic2">
             <div>
-                <h2>这是一个动物的背影图</h2>
+                <h2>这是一个新年图</h2>
                 <img src="../assets/img03-nianhui.png" width="200px"/>
             </div>
         </template>
@@ -78,7 +90,7 @@
             const yearmetting=Vue.extend({
                 template:"#nianhui"
             });
-            const baisc1=Vue.extend({
+            const basic1=Vue.extend({
                 template:"#basic1"
             });
             const basic2=Vue.extend({
@@ -88,14 +100,15 @@
                 {
                     path:"/ani",
                     component:animal,
+                    name:"ani",
                     children:[
-                        {path:"/basic1",component:basic1},
-                        {path:"/basic2",component:basic2},
-                        {path:"/",redirect:"/basic1"}
+                        {path:"basic1",component:basic1},
+                        {path:"basic2",component:basic2},
+                        {path:"/",redirect:"basic1"}
                     ]
                 },
-                {path:"/girl",component:pettygirl},
-                {path:"/year",component:yearmetting},
+                {path:"/girl",component:pettygirl,name:"girl"},
+                {path:"/year",component:yearmetting,name:"year"},
                 {path:"/",redirect:"/ani"}
             ];
             const router = new VueRouter({routes});
