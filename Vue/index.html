@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <!--<script src="../js/vue.min.js"></script>-->
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <!--vue-app是根容器-->
+    <div id="vue-app">
+       <h1>{{greet('afternoon')}}</h1>
+       <p>name:{{name}}</p>
+       <p>job:{{job}}</p>
+        <a v-bind:href="website">web网页</a>
+        <input type="text" v-bind:value="job">
+        <a v-html="websiteTag"></a>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
