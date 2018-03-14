@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件和事件修饰符</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../js/vue.min.js"></script>
+    <!--<script src="https://unpkg.com/vue"></script>-->
+</head>
+<body>
+    <!--vue-app是根容器-->
+    <div id="vue-app">
+       <h1>event</h1>
+       <p>我的年龄是：{{age}}</p>
+        <!-- once 事件修饰符  只执行一次 -->
+       <button v-on:click.once="add(1)">增加一岁</button>
+       <button @click="subtract(1)">减少一岁</button>
+       <button @dblclick="add(10)">增加十岁</button>
+       <button v-on:dblclick="subtract(10)">减少十岁</button>
+
+       <div class="canvas" @mousemove="updateXY">
+            {{x}} , {{y}}
+           <!--<span @mousemove="stopmove">stop Moving</span>-->
+           <!-- 修饰符stop可以阻止冒泡 , 效果同上stopmove -->
+           <span @mousemove.stop="">stop Moving</span>
+       </div>
+        <!--修饰符prevent提交事件不再重新载入页面,阻止默认跳转-->
+        <a @click.prevent="alertfunc" href="http://www.thenewstep.com">the new step</a>
+
+        <!-- 修饰符可以链式调用 -->
+        <a v-on:click.stop.prevent="alertfunc" href="http://www.thenewstep.com">the new step</a>
+
+        <!-- 修饰符capture 添加事件监听器时，使用事件捕获模式 -->
+        <!-- 也就是说，内部元素触发的事件先在此处处理，然后才交给内部元素进行处理 -->
+        <div v-on:click.capture="doThis" class="canvas">
+            <button @click="doChild">按钮</button>
+        </div>
+
+        <!--self： 只有在 event.target 是元素自身时，才触发处理函数。 -->
+        <!-- 也就是说，event.target 是子元素时，不触发处理函数 -->
+        <div v-on:click.self="doThis" class="canvas">
+          点击  <button @click="doChild">按钮</button>
+        </div>
+
+        <!-- passive: 滚动事件的默认行为（滚动）将立即发生， -->
+        <!-- 而不是等待 `onScroll` 完成后才发生， -->
+        <!-- 以防在滚动事件的处理程序中含有 `event.preventDefault()` 调用 -->
+        <!--.passive 修饰符对于提高移动设备的性能尤其有用。-->
+        <div class="canvasScroll" v-on:scroll.passive="onScroll">
+            <P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P>
+            <P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P>
+            <P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P>
+            <P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

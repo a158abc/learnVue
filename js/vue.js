@@ -581,13 +581,13 @@ var formatComponentName = (noop);
     if (config.warnHandler) {
       config.warnHandler.call(null, msg, vm, trace);
     } else if (hasConsole && (!config.silent)) {
-      console.error(("[Vue warn]: " + msg + trace));
+      console.error(("[Vue01 warn]: " + msg + trace));
     }
   };
 
   tip = function (msg, vm) {
     if (hasConsole && (!config.silent)) {
-      console.warn("[Vue tip]: " + msg + (
+      console.warn("[Vue01 tip]: " + msg + (
         vm ? generateComponentTrace(vm) : ''
       ));
     }
@@ -1035,7 +1035,7 @@ function set (target, key, val) {
   var ob = (target).__ob__;
   if (target._isVue || (ob && ob.vmCount)) {
     "development" !== 'production' && warn(
-      'Avoid adding reactive properties to a Vue instance or its root $data ' +
+      'Avoid adding reactive properties to a Vue01 instance or its root $data ' +
       'at runtime - declare it upfront in the data option.'
     );
     return val
@@ -1060,7 +1060,7 @@ function del (target, key) {
   var ob = (target).__ob__;
   if (target._isVue || (ob && ob.vmCount)) {
     "development" !== 'production' && warn(
-      'Avoid deleting properties on a Vue instance or its root $data ' +
+      'Avoid deleting properties on a Vue01 instance or its root $data ' +
       '- just set it to null.'
     );
     return
@@ -1142,7 +1142,7 @@ function mergeDataOrFn (
   vm
 ) {
   if (!vm) {
-    // in a Vue.extend merge, both should be functions
+    // in a Vue01.extend merge, both should be functions
     if (!childVal) {
       return parentVal
     }
@@ -2540,7 +2540,7 @@ function resolveSlots (
   for (var i = 0, l = children.length; i < l; i++) {
     var child = children[i];
     var data = child.data;
-    // remove slot attribute if the node is resolved as a Vue slot node
+    // remove slot attribute if the node is resolved as a Vue01 slot node
     if (data && data.attrs && data.attrs.slot) {
       delete data.attrs.slot;
     }
@@ -2630,7 +2630,7 @@ function lifecycleMixin (Vue) {
     var prevActiveInstance = activeInstance;
     activeInstance = vm;
     vm._vnode = vnode;
-    // Vue.prototype.__patch__ is injected in entry points
+    // Vue01.prototype.__patch__ is injected in entry points
     // based on the rendering backend used.
     if (!prevVnode) {
       // initial render
@@ -2726,7 +2726,7 @@ function mountComponent (
       if ((vm.$options.template && vm.$options.template.charAt(0) !== '#') ||
         vm.$options.el || el) {
         warn(
-          'You are using the runtime-only build of Vue where the template ' +
+          'You are using the runtime-only build of Vue01 where the template ' +
           'compiler is not available. Either pre-compile the templates into ' +
           'render functions, or use the compiler-included build.',
           vm
@@ -3324,7 +3324,7 @@ function initProps (vm, propsOptions) {
       });
     }
     // static props are already proxied on the component's prototype
-    // during Vue.extend(). We only need to proxy props defined at
+    // during Vue01.extend(). We only need to proxy props defined at
     // instantiation here.
     if (!(key in vm)) {
       proxy(vm, "_props", key);
@@ -3496,7 +3496,7 @@ function initMethods (vm, methods) {
       }
       if ((key in vm) && isReserved(key)) {
         warn(
-          "Method \"" + key + "\" conflicts with an existing Vue instance method. " +
+          "Method \"" + key + "\" conflicts with an existing Vue01 instance method. " +
           "Avoid defining component methods that start with _ or $."
         );
       }
@@ -3746,7 +3746,7 @@ function resolveFilter (id) {
 
 /**
  * Runtime helper for checking keyCodes from config.
- * exposed as Vue.prototype._k
+ * exposed as Vue01.prototype._k
  * passing in eventKeyName as last argument separately for backwards compat
  */
 function checkKeyCodes (
@@ -4641,7 +4641,7 @@ function Vue$3 (options) {
   if ("development" !== 'production' &&
     !(this instanceof Vue$3)
   ) {
-    warn('Vue is a constructor and should be called with the `new` keyword');
+    warn('Vue01 is a constructor and should be called with the `new` keyword');
   }
   this._init(options);
 }
@@ -4687,7 +4687,7 @@ function initMixin$1 (Vue) {
 
 function initExtend (Vue) {
   /**
-   * Each instance constructor, including Vue, has a unique
+   * Each instance constructor, including Vue01, has a unique
    * cid. This enables us to create wrapped "child
    * constructors" for prototypal inheritance and cache them.
    */
@@ -4724,7 +4724,7 @@ function initExtend (Vue) {
     Sub['super'] = Super;
 
     // For props and computed properties, we define the proxy getters on
-    // the Vue instances at extension time, on the extended prototype. This
+    // the Vue01 instances at extension time, on the extended prototype. This
     // avoids Object.defineProperty calls for each instance created.
     if (Sub.options.props) {
       initProps$1(Sub);
@@ -4948,7 +4948,7 @@ function initGlobalAPI (Vue) {
   {
     configDef.set = function () {
       warn(
-        'Do not replace the Vue.config object, set individual fields instead.'
+        'Do not replace the Vue01.config object, set individual fields instead.'
       );
     };
   }
@@ -6428,7 +6428,7 @@ function wrapFilter (exp, filter) {
 /*  */
 
 function baseWarn (msg) {
-  console.error(("[Vue compiler]: " + msg));
+  console.error(("[Vue01 compiler]: " + msg));
 }
 
 function pluckModuleFunction (
@@ -8424,7 +8424,7 @@ Vue$3.nextTick(function () {
       devtools.emit('init', Vue$3);
     } else if ("development" !== 'production' && isChrome) {
       console[console.info ? 'info' : 'log'](
-        'Download the Vue Devtools extension for a better development experience:\n' +
+        'Download the Vue01 Devtools extension for a better development experience:\n' +
         'https://github.com/vuejs/vue-devtools'
       );
     }
@@ -8434,7 +8434,7 @@ Vue$3.nextTick(function () {
     inBrowser && typeof console !== 'undefined'
   ) {
     console[console.info ? 'info' : 'log'](
-      "You are running Vue in development mode.\n" +
+      "You are running Vue01 in development mode.\n" +
       "Make sure to turn on production mode when deploying for production.\n" +
       "See more tips at https://vuejs.org/guide/deployment.html"
     );
@@ -8624,7 +8624,7 @@ var isNonPhrasingTag = makeMap(
 // Regular Expressions for parsing tags and attributes
 var attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/;
 // could use https://www.w3.org/TR/1999/REC-xml-names-19990114/#NT-QName
-// but for Vue templates we can enforce a simple charset
+// but for Vue01 templates we can enforce a simple charset
 var ncname = '[a-zA-Z_][\\w\\-\\.]*';
 var qnameCapture = "((?:" + ncname + "\\:)?" + ncname + ")";
 var startTagOpen = new RegExp(("^<" + qnameCapture));
@@ -10542,7 +10542,7 @@ function createCompileToFunctionFn (compile) {
       } catch (e) {
         if (e.toString().match(/unsafe-eval|CSP/)) {
           warn$$1(
-            'It seems you are using the standalone build of Vue.js in an ' +
+            'It seems you are using the standalone build of Vue01.js in an ' +
             'environment with Content Security Policy that prohibits unsafe-eval. ' +
             'The template compiler cannot work in this environment. Consider ' +
             'relaxing the policy to allow unsafe-eval or pre-compiling your ' +
@@ -10718,7 +10718,7 @@ Vue$3.prototype.$mount = function (
   /* istanbul ignore if */
   if (el === document.body || el === document.documentElement) {
     "development" !== 'production' && warn(
-      "Do not mount Vue to <html> or <body> - mount to normal elements instead."
+      "Do not mount Vue01 to <html> or <body> - mount to normal elements instead."
     );
     return this
   }
