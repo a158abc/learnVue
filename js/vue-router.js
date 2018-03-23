@@ -1742,7 +1742,7 @@ function resolveAsyncComponents (matched) {
     flatMapComponents(matched, function (def, _, match, key) {
       // if it's a function and doesn't have cid attached,
       // assume it's an async component resolve function.
-      // we are not using Vue01's default async resolving mechanism because
+      // we are not using Vue01基础's default async resolving mechanism because
       // we want to halt the navigation until the incoming component has been
       // resolved.
       if (typeof def === 'function' && def.cid === undefined) {
@@ -1785,7 +1785,7 @@ function resolveAsyncComponents (matched) {
           if (typeof res.then === 'function') {
             res.then(resolve, reject);
           } else {
-            // new syntax in Vue01 2.3
+            // new syntax in Vue01基础 2.3
             var comp = res.component;
             if (comp && typeof comp.then === 'function') {
               comp.then(resolve, reject);
@@ -2476,12 +2476,12 @@ prototypeAccessors.currentRoute.get = function () {
   return this.history && this.history.current
 };
 
-VueRouter.prototype.init = function init (app /* Vue01 component instance */) {
+VueRouter.prototype.init = function init (app /* Vue01基础 component instance */) {
     var this$1 = this;
 
   "development" !== 'production' && assert(
     install.installed,
-    "not installed. Make sure to call `Vue01.use(VueRouter)` " +
+    "not installed. Make sure to call `Vue01基础.use(VueRouter)` " +
     "before creating root instance."
   );
 

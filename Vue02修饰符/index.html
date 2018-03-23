@@ -18,6 +18,8 @@
        <button @dblclick="add(10)">增加十岁</button>
        <button v-on:dblclick="subtract(10)">减少十岁</button>
 
+
+        <!--Vue.js 为 v-on 提供了事件修饰符来处理 DOM 事件细节-->
        <div class="canvas" @mousemove="updateXY">
             {{x}} , {{y}}
            <!--<span @mousemove="stopmove">stop Moving</span>-->
@@ -53,6 +55,7 @@
             <P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P><P>aa</P>
         </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
