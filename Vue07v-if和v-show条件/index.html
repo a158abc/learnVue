@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if条件</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>v-if条件</h1>
+
+        <button v-on:click="error=!error">Toggle Error</button>
+        <button v-on:click="success=!success">Toggle Success</button>
+
+        <!--<p v-if="error">网络连接错误:404</p>-->
+        <!--<p v-else-if="success">网络连接成功：200</p>-->
+
+        <p v-show="error">网络连接错误:404</p>
+        <p v-show="success">网络连接成功：200</p>
+
+    </div>
+</body>
+<!-- vue的逻辑代码注意位置 不能位于div上面  -->
+<script src="../js/vue.min.js"></script>
+<script src="app.js" type="text/javascript"></script>
+</html>

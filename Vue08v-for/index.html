@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>v-for</h1>
+        <!--数组下标-->
+        {{characters[0]}}
+        {{characters[1]}}
+        {{characters[2]}}
+
+        <!--数组遍历-->
+        <ul>
+            <li v-for="character in characters">
+                {{character}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(user,index) in users">
+               {{index+1}}-{{user.name}}-{{user.age}}
+            </li>
+        </ul>
+
+        <template v-for="(user,index) in users">
+            <h3>{{index}}.{{user.name}}</h3>
+            <p>age-{{user.age}}</p>
+        </template>
+
+
+        <template v-for="(user,index) in users">
+            <div v-for="(val,key) in user">
+                <p>{{key}}：{{val}}</p>
+            </div>
+        </template>
+
+    </div>
+</body>
+<!-- vue的逻辑代码注意位置 不能位于div上面  -->
+<script src="../js/vue.min.js"></script>
+<script src="app.js" type="text/javascript"></script>
+</html>

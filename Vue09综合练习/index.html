@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!--图片-->
+        <div id="bag" v-bind:class="{burst:ended}">
+
+        </div>
+
+        <!--进度情况-->
+        <div id="bag-health">
+            <div v-bind:style="{width:health+'%'}"></div>
+        </div>
+
+        <!--控制按钮-->
+        <div id="controls">
+            <button @click="punch" v-show="!ended">使劲敲</button>
+            <button v-on:click="restart">重新开始</button>
+        </div>
+
+    </div>
+</body>
+<!-- vue的逻辑代码注意位置 不能位于div上面  -->
+<script src="../js/vue.min.js"></script>
+<script src="app.js" type="text/javascript"></script>
+</html>
