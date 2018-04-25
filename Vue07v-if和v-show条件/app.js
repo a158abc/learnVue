@@ -2,7 +2,8 @@ new Vue({
     el:"#app",
     data:{
         error:false,
-        success:false
+        success:false,
+        loginType:"username"
     },
     methods:{
 

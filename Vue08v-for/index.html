@@ -21,18 +21,18 @@
         </ul>
 
         <ul>
-            <li v-for="(user,index) in users">
+            <li v-for="(user,index) in users" v-bind:key="index">
                {{index+1}}-{{user.name}}-{{user.age}}
             </li>
         </ul>
 
-        <template v-for="(user,index) in users">
+        <template v-for="(user,index) in users" v-bind:key="index">
             <h3>{{index}}.{{user.name}}</h3>
             <p>age-{{user.age}}</p>
         </template>
 
 
-        <template v-for="(user,index) in users">
+        <template v-for="(user,index) in users" v-bind:key="index">
             <div v-for="(val,key) in user">
                 <p>{{key}}：{{val}}</p>
             </div>

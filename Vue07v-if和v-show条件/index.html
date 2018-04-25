@@ -18,6 +18,16 @@
         <p v-show="error">网络连接错误:404</p>
         <p v-show="success">网络连接成功：200</p>
 
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username"  key="username-input">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address"  key="email-input">
+        </template>
+
+
     </div>
 </body>
 <!-- vue的逻辑代码注意位置 不能位于div上面  -->
